@@ -1,0 +1,445 @@
+/* step:1 General */
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.m-b-10{margin-bottom: 10px;}
+/* step 2: Header */
+header{
+    width:100%;
+    height:100vh;
+    background: url(../img/bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    z-index: 1;
+}
+
+/* step3 : Logo and Menu*/
+
+.logo{
+    position: fixed;
+    float: left;
+    margin: 16px 36px;
+    color:#fff;
+    font-weight: bold;
+    font-size: 24px;
+}
+nav{
+    position: fixed;
+    width:100%;
+    z-index: 999;
+}
+nav ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+   overflow: hidden;
+   color:#fff;
+   text-align: right;
+   transition: 1s;
+    
+}
+nav.black ul{
+    background: #000;
+}
+nav ul li{
+    display:inline-block;
+    padding:20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 20px;
+}
+.menu-icon{
+    width:100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color:#fff;
+    display: none;
+}
+@media(max-width:580px){
+    .logo{
+        position: fixed;
+        top:0;
+        margin-top:16px;
+    }
+    nav ul{
+        max-height:0px;
+        background:#000;
+    }
+    nav.black ul{background: #000;}
+    .showing{max-height:20em;}
+    nav ul li{
+        box-sizing: border-box;
+        width:100%;
+        padding: 24px 0;
+        text-align: center;
+    }
+    .menu-icon{display: block;}
+}
+
+/* step 4: Container and grid Layout:: */
+.container{
+  
+    width: calc(100% - 10rem);
+    max-width: 500rem;
+    margin: 0 auto;
+}
+div[class^="col-"]{
+ 
+    text-align: center;
+    padding: 1rem 0;
+}
+.row{
+    display: flex;
+    flex-wrap:wrap;
+    }
+.col-12{  flex:0 0 100%;}
+.col-11{flex:0 0 calc(100% /12 * 11);}
+.col-10{flex:0 0 calc(100% /12 * 10);}
+.col-9{flex:0 0 calc(100% /12 * 9);}
+.col-8{flex:0 0 calc(100% /12 * 8);}
+.col-7{flex:0 0 calc(100% /12 * 7);}
+.col-6{flex:0 0 calc(100% /12 * 6);}
+.col-5{flex:0 0 calc(100% /12 * 5);}
+.col-4{flex:0 0 calc(100% /12 * 4);}
+.col-3{flex:0 0 calc(100% /12 * 3);}
+.col-2{flex:0 0 calc(100% /12 * 2);}
+.col-1{flex:0 0 calc(100% /12 * 1);}
+
+/* step 5:  Colors:: */
+
+.bg-primary{background-color:#007bff!important}
+.bg-success{background-color:#28a745!important}
+.bg-info{background-color:#17a2b8!important}
+.bg-warning{background-color:#ffc107!important}
+.bg-danger{background-color:#dc3545!important}
+.bg-secondary{background-color:#6c757d!important}
+.bg-dark{background-color:#343a40!important}
+.bg-light{background-color:#f8f9fa!important}
+.text-white{color:#fff!important}
+.text-dark{color:#343a40!important}
+.small,small{font-size:80%;font-weight:400}
+
+/* Step 6: Responsive table */
+.table-responsive {
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch
+}
+.table-responsive>.table-bordered {border: 0}
+.table {
+	width: 100%;
+	margin-bottom: 1rem;
+	color: #212529
+}
+.table td,.table th {
+	padding: .75rem;
+	vertical-align: top;
+	border-top: 1px solid #dee2e6
+}
+.table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #dee2e6
+}
+.table tbody+tbody {border-top: 2px solid #dee2e6}
+thead {	display: table-header-group}
+tr {page-break-inside: avoid}
+.table {border-collapse: collapse!important}
+.table td,.table th {background-color: #fff!important}
+.table .thead-dark th {	color: inherit;border-color: #dee2e6}
+.table-bordered {border: 1px solid #dee2e6}
+.table-bordered td,.table-bordered th {border: 1px solid #dee2e6}
+.table-bordered thead td,.table-bordered thead th {border-bottom-width: 2px}
+.table-bordered td,.table-bordered th {border: 1px solid #dee2e6!important}
+
+/* step 7: Button */
+.btn {
+    text-decoration: none;
+	display: inline-block;
+	font-weight: 400;
+	color: #212529;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+@media (prefers-reduced-motion:reduce) {.btn {transition: none}}
+.btn:hover {
+	color: #212529;
+	text-decoration: none
+}
+.btn.focus,.btn:focus {
+	outline: 0;
+	box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+}
+.btn.disabled,.btn:disabled {opacity: .65}
+/* btn primary */
+.btn-primary{color:#fff;background-color:#007bff;border-color:#007bff}
+.btn-primary:hover{color:#fff;background-color:#0069d9;border-color:#0062cc}
+.btn-primary.focus,.btn-primary:focus{box-shadow:0 0 0 .2rem rgba(38,143,255,.5)}
+.btn-primary.disabled,.btn-primary:disabled{color:#fff;background-color:#007bff;border-color:#007bff}
+.btn-primary:not(:disabled):not(.disabled).active,.btn-primary:not(:disabled):not(.disabled):active,.show>.btn-primary.dropdown-toggle{color:#fff;background-color:#0062cc;border-color:#005cbf}
+.btn-primary:not(:disabled):not(.disabled).active:focus,.btn-primary:not(:disabled):not(.disabled):active:focus,.show>.btn-primary.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(38,143,255,.5)}
+/* outline button */
+.btn-outline-warning {color: #ffc107;border-color: #ffc107}
+.btn-outline-warning:hover {color: #212529;background-color: #ffc107;border-color: #ffc107}
+.btn-outline-warning.focus,.btn-outline-warning:focus {box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .5)}
+.btn-outline-warning.disabled,.btn-outline-warning:disabled {color: #ffc107;background-color: transparent}
+.btn-outline-warning:not(:disabled):not(.disabled).active,.btn-outline-warning:not(:disabled):not(.disabled):active,.show>.btn-outline-warning.dropdown-toggle {color: #212529;background-color: #ffc107;border-color: #ffc107}
+.btn-outline-warning:not(:disabled):not(.disabled).active:focus,.btn-outline-warning:not(:disabled):not(.disabled):active:focus,.show>.btn-outline-warning.dropdown-toggle:focus {box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .5)}
+
+/* step 8: owl carosel */
+
+/* .owl-dots{display: none;} */
+.owl-carousel .item{background: #007bff;height:100px;}
+
+
+/* Step 9:Lightbox */
+.gallery{
+    margin: 10px 50px;
+}
+
+.gallery img{
+    width: 230px;
+    padding: 5px;
+    filter: grayscale(100%);
+    transition: 1s;
+}
+.gallery img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+   
+}
+
+/* Step 10: modal popup box */
+.modal{
+    background:rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.modal-content{
+    width: 75%;
+    height:65%;
+    background-color: #fff;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2em;
+    border-radius: 1em;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+.modal-close{
+    text-decoration: none;
+    color:#363636;
+    font-size: 2em;
+    position: absolute;
+    top: 0.5em;
+    right: 1em;
+}
+.modal-heading{
+    color: #005cbf;
+    margin-bottom: 1em;
+}
+.modal-para{
+    line-height: 1.5em
+}
+#modal-link:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal-link:target .modal-content{
+    opacity: 1;
+    visibility: visible;
+}
+#modal-link1:target{
+    opacity: 1;
+    visibility: visible;
+}
+#modal-link1:target .modal-content{
+    opacity: 1;
+    visibility: visible;
+}
+/* Step 11: Step process */
+
+#msform{
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+#msform fieldset{
+    background: #fff;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+/* hide all  except first fieldset */
+#msform fieldset:not(:first-of-type){
+    display: none;
+}
+/* Input */
+#msform input, #msform textarea{
+    padding: 15px;
+    border:1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2c3e50;
+    font-size: 13px;
+}
+
+#msform .action-button{
+    width: 100%;
+    background: #27ae60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+/* progressbar */
+#progressbar{
+    margin-bottom: 30px;
+    overflow: hidden;
+    /* css counter to number the steps */
+    counter-reset: step;
+}
+#progressbar li{
+    list-style-type: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+}
+#progressbar li:before{
+    content: counter(step);
+    counter-increment: step;
+    width: 20px;
+    line-height: 20px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: #fff;
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+#progressbar li:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+    }
+
+#progressbar li:first-child:after{
+    content: none;
+}
+
+/* marking active / completed steps green */
+/* the number of step and the connector before it = green */
+#progressbar li.active:before, #progressbar li.active:after{
+background: #27ae60;
+color: #fff;
+}
+
+
+/* Product Gallery with Image Zoom  */
+.show{
+    width: 400px;
+    height: 400px;
+  }
+  #show-img { width: 400px; height: 400px; }
+.small-img{
+  width: 350px;
+  height: 70px;
+  margin-top: 10px;
+  position: relative;
+  left: 25px;
+}
+.small-img .icon-left, .small-img .icon-right{
+  width: 12px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+.small-img .icon-left{
+  transform: rotate(180deg)
+}
+.small-img .icon-right{
+  right: 0;
+}
+.small-img .icon-left:hover, .small-img .icon-right:hover{
+  opacity: .5;
+}
+.small-container{
+    width: 310px;
+    height: 70px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .small-container div{
+    width: 800%;
+    position: relative;
+  }
+  
+  .small-container .show-small-img{
+    width: 70px;
+    height: 70px;
+    margin-right: 6px;
+    cursor: pointer;
+    float: left;
+  }
+  .small-container .show-small-img:last-of-type{
+    margin-right: 0;
+  }
+  
